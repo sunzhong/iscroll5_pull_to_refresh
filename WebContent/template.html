@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title></title>
+        <style type="text/css">
+         .pdiv{
+          position:absolute;
+          top:50px;
+          bottom: 0px;
+          width:100%;
+         }
+         .cdiv{
+          position:absolute;
+          margin-top:10px;
+          top:50px;
+          width:50%;
+         }
+        </style>
+    </head>
+    <body>
+        <div class="pdiv">
+         <div class="cdiv">ddd</div>
+        </div>
+        <button id="translate">translate</button>
+    </body>
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+   
+    <script type="text/javascript">
+        $(function() {
+        	var translate=$('#translate');
+        	var cdiv=document.querySelector('.cdiv');
+        	console.log('cdiv offsetTop =',cdiv.offsetTop,
+					' $.position=',$('.cdiv').position().top,
+					' cdiv.getBoundingClientRect().top=',cdiv.getBoundingClientRect().top,
+					' cdiv.offsetParent.getBoundingClientRect().top=',cdiv.offsetParent.getBoundingClientRect().top);
+            cdiv.addEventListener('click',function(){
+					console.log('cdiv click');
+             });
+			translate.on('click',function(){
+				cdiv.style.transform='translate3d(0,100px,0)';
+				cdiv.style.webkitTransform='translate3d(0,100px,0)';
+				console.log('cdiv offsetTop =',cdiv.offsetTop,
+							' $.position=',$('.cdiv').position().top,
+							' cdiv.getBoundingClientRect().top=',cdiv.getBoundingClientRect().top,
+							' cdiv.offsetParent.getBoundingClientRect().top=',cdiv.offsetParent.getBoundingClientRect().top);
+				
+				cdiv.style.top=(cdiv.getBoundingClientRect().top-cdiv.offsetParent.getBoundingClientRect().top)+'px';
+				cdiv.style.webkitTransform='';
+			});
+            
+        });
+    </script>
+
+</html>

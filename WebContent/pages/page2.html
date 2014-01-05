@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page 2</title>
+        <script src="../js/lib/require.js"></script>
+        <script>
+            
+            require(['../js/common'], function (common) {
+                
+                require(['app/main2']);
+            });
+        </script>
+       
+         <style type="text/css" media="all">
+			body,ul,li {
+				padding:0;
+				margin:0;
+				border:0;
+			}
+			body {
+				font-size:12px;
+				-webkit-user-select:none;
+			    -webkit-text-size-adjust:none;
+				font-family:helvetica;
+			}
+			.ddd{
+				position:fixed;
+				height:45px;
+				width:100%;
+				z-index:100;
+				line-height:40px;
+				font-size:14px;
+				vertical-align:middle;
+				background-color:red;
+			}
+		</style>
+    </head>
+    <body>
+        <div class="ddd">БъЬт</div>
+  <div id="wrapper">
+	<div class="scroller">
+		<div id="scroller-pullDown">
+			<span class="pullDownLabel">Pull down to refresh...</span>
+		</div>
+		<ul id="thelist">
+			<li>Pretty row 1</li>
+			<li>Pretty row 2</li>
+			<li>Pretty row 3</li>
+			<li>Pretty row 4</li>
+			<li>Pretty row 5</li>
+			<li>Pretty row 6</li>
+			<li>Pretty row 7</li>
+			<li>Pretty row 8</li>
+			<li>Pretty row 9</li>
+			<li>Pretty row 10</li>
+		</ul>
+		<div id="scroller-pullUp">
+			<span class="pullUpLabel">Pull up to refresh...</span>
+		</div>
+	</div>
+</div>
+    </body>
+</html>
